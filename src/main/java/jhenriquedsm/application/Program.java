@@ -20,6 +20,11 @@ public class Program {
         Pessoa p = em.find(Pessoa.class, 2);
         System.out.println(p);
 
+        // remove
+        em.getTransaction().begin();
+        em.remove(p);
+        em.getTransaction().commit();
+
         System.out.println("Ready!");
         em.close();
         emf.close();
